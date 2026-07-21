@@ -1,0 +1,58 @@
+lass ArtGallery:
+    def __init__(self,gallery_name,location):
+        self.gallery_name = gallery_name
+        self.location = location
+        
+        self.artworks = []
+        print(f"\NWelcome to {self.gallery_name}!")
+        print(f"Location:{self.location}") 
+        print("Art gallery collection is ready.")
+
+    def add_artwork(self,artwork):
+        self.artworks.append(artwork)
+        print(f"'{artwork}'has been added to the gallery collection")
+
+    def remove_artwork(self,artwork):
+        if artwork in self.artworks:
+            self.artworks.remove(artwork)
+            print(f"'{artwork}'has been removed from the gallery collection")
+        else:
+            print(f"'{artwork}'was not found in the gallery collection")
+
+    def display_artworks(self):
+        print(f"\n---{self.gallery_name} Art Collection")
+        if  self.artworks:
+            for number, artwork in enumerate(self.artworks, start=1):
+                print(f"{number}. {artwork}")
+        else:
+            print("No artworks in the collection.")
+        
+
+    def __del__(self):
+        print(f"\nClosing {self.gallery_name}. Thank you for managing the art collection!")
+
+
+gallery = ArtGallery("The Modern Art Gallery", "New York City")
+
+while True:
+    print("\n---ART GALLERY MENU ---")
+    print("1. Add Artwork")
+    print("2. Remove Artwork")
+    print("3. Display Artworks")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        artwork_name = input("Enter the name of the artwork to add: ")
+        gallery.add_artwork(artwork_name)
+    elif choice == "2":
+        artwork_name = input("Enter the name of the artwork to remove: ")
+        gallery.remove_artwork(artwork_name)
+    elif choice == "3":
+        gallery.display_artworks()
+    elif choice == "4":
+        del gallery
+        break
+    else:
+        print("Invalid choice. Please enter a number between 1 to 4.")
