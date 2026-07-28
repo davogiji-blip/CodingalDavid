@@ -1,0 +1,65 @@
+from abc import ABC,abstractmethod
+
+class Instrument(ABC):
+    def __init__(self, name, category):
+        self.name = name
+        self.category = category
+
+    def show_info(self):
+        print(f"Instrument Name: {self.name}")
+        print(f"Category: {self.category}")    
+
+    @abstractmethod
+    def play_sound(self):
+        pass    
+
+
+class Violin(Instrument):
+    def __init__(self,name, category, strings):
+        super().__init__(name, category)
+        self.strings = strings
+
+    def play_sound(self):
+        print(f"{self.name} has {self.strings} strings and is played with a bow.")
+        print("Playing the violin sound...")   
+
+class Piano(Instrument):
+    def __init__(self,name, category, number_of_keys):
+        super().__init__(name, category)
+        self.number_of_keys = number_of_keys
+
+    def show_info(self):
+        super().show_info()
+        print(f"{self.name} has {self.number_of_keys} keys.")
+
+    def play_sound(self):
+        print("Playing the piano sound...")
+
+
+class Clarinet(Instrument):
+    def __init__(self,name, category, reed_type):
+        super().__init__(name, category)
+        self.reed_type = reed_type
+
+    def play_sound(self):
+        print(f"{self.name} is playing {self.reed_type} the clarinet sound...")
+
+
+    Instrument_1 = Violin("Stradivarius", "String Instrument", 4)
+    Instrument_2 = Piano("Yamaha", "Keyboard", 88)       
+    Instrument_3 = Clarinet("Selmer", "Woodwind", "Bassoon")
+
+
+    print("========= Musical Instruments =========")
+    Instrument_1.show_info()
+    Instrument_1.play_sound()
+    print()
+
+    Instrument_2.show_info()
+    Instrument_2.play_sound()
+    print()
+
+    Instrument_3.show_info()
+    Instrument_3.play_sound()
+
+    
