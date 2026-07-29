@@ -1,0 +1,61 @@
+from hashlib import new
+
+
+class Pet:
+    def __init__(self, name, health):
+        self.name = name
+        self.__health = health
+
+    def display_info(self):
+        print(f"Pet Name: {self.name}")
+        print(f"Pet Health: {self.__health}")
+
+    def care_action(self):
+        print(f"{self.name} is being cared for.")
+
+    def care_taken(self):
+        print(f"{self.name} is being taken care of.")   
+
+    def set_health(self, new_health):
+        if new_health >= 0 and new_health <= 100:
+            self.__health = new_health
+            print("Invalid health value. Please enter a value between 0 and 100.")
+            self.__health = new_health 
+            print(f"{self.name}'s health has been updated to {self.__health}.")  
+        else:
+            print("Invalid health value. Please enter a value between 0 and 100.")
+
+class Horse(Pet):
+    def care_action(self):
+        print(f"{self.name} needs a run.")
+
+class Snake(Pet):
+    def care_action(self):
+        print(f"{self.name} bites alot.")
+
+class Parrot(Pet):
+    def care_action(self):
+        print(f"{self.name} needs to be quiet.")
+
+horse = Horse("Spirit", 80)
+snake = Snake("Slither", 60)
+parrot = Parrot("Polly", 90)
+
+pets = [horse, snake, parrot]
+
+print("===== Pet Care Actions Dashboard ====")
+for pet in pets:
+    pet.display_info()
+    pet.care_action()
+    print("-----------------------------")
+
+print("===== Updating Pet Health ====")
+horse.set_health(85)
+snake.set_health(70)
+parrot.set_health(95)
+
+
+print("===== Final Pet Care Summary ====")
+for pet in pets:
+    pet.display_info()
+    print("-----------------------------")
