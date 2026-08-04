@@ -1,0 +1,75 @@
+print("=============")
+print(" Notes Organizer")
+print("=============")
+
+
+sample_notes = [
+    "1. Introduction to Python",
+    "2. Variables and Data Types",
+    "3. Control Structures",
+    "4. Functions and Modules",
+    "5. File Handling",
+    "6. Error Handling",
+    "7. Object-Oriented Programming",
+    "8. Libraries and Frameworks",
+    "9. Best Practices",
+    "10. Conclusion"
+]
+
+file = open("class_notes.txt", "w")
+file.writelines(sample_notes)
+file.close()
+print("Class notes have been saved to 'class_notes.txt'.")
+
+print("'\nPart 1: Reading the notes from the file:")
+file = open("class_notes.txt", "r")
+preview = file.read(40)
+file.close()
+print("Preview of the notes:")
+print(preview)
+
+print("\nPart 2: Read all lines in the file:")
+file = open("class_notes.txt", "r")
+all_lines = file.readlines()
+lines = file.readlines ()
+file.close()
+print("Total Times in file:", len(lines))
+
+for i in range(len(lines)):
+    print(f"Line {i + 1} -> {lines[i].strip()}")
+
+print("\nPart 3: Read the file line by line:")
+file = open("class_notes.txt", "r")
+for line in file:
+    print("Reading line:", line.strip())    
+file.close()
+
+
+print("\nPart 4: filter lines:")
+file = open("class_notes.txt", "r")
+for line in file:
+    if line.startswith("MOVE"):
+        print("Moved:", line.strip())
+else:
+    print("STAY: ", line.strip())
+file.close()
+
+print("\nPart 5: Search for a specific note:")
+file = open("class_notes.txt", "r")
+lines = file.readlines()
+file.close()
+
+output_file = open("search_results.txt", "w")
+for line in lines:
+    if line.startswith("IMPORTANT") or line.startswith("TODO"):
+        output_file.write(line)
+output_file.close()
+
+print("\n===========")
+print("Smart Notes Organizer")
+print("===========")
+print("read(n) : Previewed the first n characters of the notes")
+print("readlines() : Read all lines in the notes")
+print("Loop :Read through the notes line by line")
+print("Condition :Move lines starting with 'MOVE' to a new file and stay the rest")
+print("Search : Search for lines starting with 'IMPORTANT' or 'TODO' and save them to a new file")
