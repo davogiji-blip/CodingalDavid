@@ -1,0 +1,50 @@
+file_name = "shopping_list.txt"
+
+shopping_file = open(file_name, "w")
+
+shopping_file.write("Shopping list\n")
+shopping_file.write("1. Beans\n")
+shopping_file.write("2. Jollof rice\n")
+shopping_file.write("3. Shawarma\n")
+shopping_file.write("4. Juice\n")
+
+shopping_file.close()
+
+print("Shopping list created successfully.")
+
+
+shopping_file = open(file_name, "r")
+print("\n === Shopping List ===")
+content = shopping_file.read()
+print(content)
+shopping_file.close()
+
+shopping_file = open(file_name, "a")
+shopping_file.write("5. Chicken\n")
+shopping_file.write("6. Fish\n")
+shopping_file.write("7. Eggs\n")
+shopping_file.close()
+shopping_file.close()
+print("Items added to the shopping list successfully.")
+
+shopping_file = open(file_name, "r")
+print("\n === Updated Shopping List ===")
+updated_content = shopping_file.read()
+print(updated_content)
+shopping_file.close()
+
+shopping_file = open(file_name, "r")
+print("\n === Reading Shopping List Items ===")
+
+line_number = 1
+for line in shopping_file:
+    print("Line", line_number, ": ", line.strip())
+    line = line.strip()
+    line_number += 1
+shopping_file.close()
+
+print("\n === Shopping List Items in Reverse Order ===")
+print("Summary")
+print("========")
+print("Total items in the shopping list: ", file_name)
+print("Total number of lines in the shopping list: ", line_number - 1))
