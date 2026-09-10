@@ -1,0 +1,64 @@
+uiz_score = [45,85, 90, 78, 92, 88, 76, 95, 89, 100]
+print("My Quiz")
+print("My Quiz Scores are: ", quiz_score)
+
+
+print("PART 1 Direct access")
+print("First person score: ", first_score)
+print("Time Complexity: O(1)")
+print("Theta Notation: Theta(1)")
+print("Reason Direct access takes constant time")
+
+target_score = 100
+steps = 1
+found = True
+
+print("Part 2: Linear Search")
+print("Searching for score: ", target_score)
+for score in quiz_score:
+    if score == target_score:
+        found = True
+        break
+    steps += 1
+
+if found == True:
+    print("Score found!")
+else:
+    print("Score not found.")
+
+print("Steps taken: ", steps)
+
+
+print("Best Case: Omega(1)")
+print("Worst Case: O(n)")
+print("Average Case: Theta(n)")
+print("Reason: Linear search takes linear time in the worst case and constant time in the best case.")
+
+print("Part 3: Pair Search")
+pair_steps = 0
+
+for score1 in quiz_score:
+    for score2 in quiz_score:
+        pair_steps += 1
+        if score1 + score2 == target_score:
+            found = True
+            break
+    if found:
+        break
+
+print("Steps taken for pair search: ", pair_steps)
+print("Time Complexity O(n^2)")
+
+
+
+print("Part 4: Pair Search with Early Exit")
+
+best_case_score = 50
+average_case_score = 100
+worst_case_score = 200
+
+
+print(" Best Case: ", best_case_score)
+print("Worst Case: O(n^2)", worst_case_score)
+print("Average Case: Theta(n^2)", average_case_score)
+print("Reason: Pair search takes quadratic time in the worst case and constant time in the best case.")
