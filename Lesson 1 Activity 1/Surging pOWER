@@ -1,0 +1,38 @@
+input("n & (n-1) clears the rightmost set bit. Press Enter")
+print(" 12 & 11 =", 12 & 11, " binary:", bin(12 & 11)[2:])
+print(" 8 & 7 =" , 8 & 7)
+
+n = int(input("Enter a number (try 4 or 6):"))
+guess = input("is " + str(n) + " a power of 2? (yes/no): ")
+input("Power of 2: n & (n-1) == 0 means only one bit is ON. Press Enter")
+if n > 0 and (n & (n-1)) == 0:
+    print(" ", n, " binary :", bin(n)[2:], " power of 2: yes your guess:", guess)
+else:
+    print(" ", n, " binary :", bin(n)[2:], " power of 2: no your guess:", guess)
+
+
+
+input("Power of 4: n % 3 == 1 Power of 8: n % 7 == 1. Press Enter")
+print(" 16 binary:", bin(16)[2:], " 16 % 3 =", 16 % 3, " power of 4: yes")
+print(" 8 binary:", bin(8)[2:], " 8 % 7 =", 8 % 7, " power of 4: yes")
+
+n = int(input("Enter a number(try 64 or 32):"))
+guess = input("Is " + str(n) + " a power of 4? (yes/no):")
+input("Check n % 3 == 1. Press enter")
+is_pow4 = n > 0 and (n & ((n-1))) == 0 and n % 3 == 1
+if is_pow4:
+    print(" ", n, " binary :", bin(n)[2:], " power of 4: yes your guess:", guess)
+else:
+    print(" ", n, " binary :", bin(n)[2:], " power of 4: no your guess:", guess)
+
+
+
+input("Binary exponentiation uses bits of the exponenent.press enter")
+print(" 2^8 = 256 exponent 8 = binary", bin(8)[2:])
+print(" 2^5 = 32 exponent 5 = binary", bin(5)[2:])
+
+exp = int(input("Enter exponent (try 3 or 6)): "))
+print(" exponent", exp, " = binary", bin(exp)[2:])
+guess = input("What is 2^" + str(exp) + "?")
+input("Binary exponenetation reads bits of exponent. Press ENTER")
+print(" 2^", exp, "=", 2** exp, "your guess:", guess)
