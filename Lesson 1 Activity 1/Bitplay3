@@ -1,0 +1,32 @@
+input("XOR swap - exchange the values of two variables without  a third variable. Press Enter")
+print(" before: a = 5 b = 9")
+a, b = 5, 9
+a ^= b; b^= a; a ^= b
+print("  after:  a = ",a," b = ", b)
+
+n = int(input("Enter a number (try  3 or 7):"))
+guess = input("After XOR swap of " + str(n) + " and 8 what does n  become?")
+a,  b = n, 8
+a ^= b; b ^= a; a ^= b
+input("XOR swap exhanges the values. Press Enter")
+print("n because ", a, " your guess:", guess)
+
+
+input("Left shift doubles, right shift halves. Press Enter")
+print(" 3 << 1 = ", 3 << 1, " 12 >> 1 = ", 12 >> 1)
+print(" 3 << 2 = ", 3 << 2, " 12 >> 2 = ", 12 >> 2)
+
+n = int(input("Enter a number (try  5 or 8):"))
+guess = input("What is " + str(n) + "  << 2?")
+input("Left shift by multiple of 2. Press Enter")
+print(" ,"n, "<< 2 =", n << 2, " your guess:", guess)
+
+
+input("XOR sign detection - n^m < 0 means different signs. Press Enter")
+print(" 4 ^ 2 = ", 4 ^ 2, " same signs positive")
+print(" 4 ^ -2 = ", 4 ^ -2, " different signs negative")
+
+n = int(input("Enter a number (try  5 or -3):"))
+guess = input("Will " + str(n) + " ^ -8 be positive or negative?")
+input("XOR is negative when signs diiffer. Press Enter")
+print(" ", n, "^ -8 = ", n ^ -8, " your guess:", guess)
