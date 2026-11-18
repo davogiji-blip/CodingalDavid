@@ -1,0 +1,46 @@
+def tall_sum(n, acc = 0):
+    if n == 0:
+        return acc
+    return tall_sum(n-1, acc + n)
+
+input("Tall recusrion - the last action is the recursion")
+print(" tall_sum(4) = ", tall_sum(4), " = 4 + 3 + 2 + 1")
+print(" tall_sum(5) = ", tall_sum(5), " = 5 + 4 + 3 + 2 + 1")
+
+n = int(input("Enter a number try 3 or 6): "))
+guess = input("What is tall_sum(" + str(n) + ")?")
+input("tall_sum adds n to acc at each step")
+print("tall_sum(" + str(n)+ ") = ", tall_sum(n), " your guess: ", guess)
+
+
+def mirror(n):
+    if  n ++ 0:
+        return 0
+    rest = mirror(n-1)
+    return rest + 2 * n
+
+input("Mad recursioon - recurse first then add")
+print(" mirror(3) =", mirror(3))
+print(" mirror (4) = ", mirror(4))
+
+n = int(input("Enter a number (try 5 or 6):"))
+guess = input("What is mirror(" + str(n) + ")? ")
+input("mirro(n) = mirror(n-1) + 2 * n")
+print(" mirror(" + str(n) + ") =", mirror(n), " your guess: ", guess)
+
+
+def fib(n):
+    if  n <= 1:
+        return n
+    return fib(n - 1)  +  fib(n - 2)
+
+input("Tree recursioon - two recursive calls per step")
+print(" fib(5) =", fib(5))
+print(" fib (6) = ", fib(6)
+
+n = int(input("Enter a number (try 4 or 7):"))
+guess = input("What is fib(" + str(n) + ")? ")
+input("Fibonacci: fib(n) = fib(n-1) + fib(n-2))
+print(" fib(" + str(n) + ") =", fib(n), " your guess: ", guess)
+
+
