@@ -1,0 +1,50 @@
+def flip_number(num):
+    if num // 10 == 0:
+        return num
+    last = num % 10
+    rest = flip_number(num // 10)
+    return last * pow(10, len(str(rest))) + rest
+
+input("flipNumber peels last digit with % 10 then recurses on // 10.Press Enter")
+print(" flip_number(123) =", flip_number(123))
+print(" flip_number(456) =", flip_number(456))
+
+n = int(input("Enter a number (try 789 or 1234): "))
+guess = input("What is the flipped_number(" + str(n) + ")?")
+input("flip_number peels last digit and places it at the front of eeach step. Press Enter")
+print("flip_number(" + str(n) + ")    =", flip_number(n), " your guess:", guess)
+
+
+def flip_name(s):
+    if len(s) == 0:
+        return s
+    return flip_name(s[1:]) + s[0]
+
+input("flip_name recurses on s[1:] then attaches s[0] at the end. Press Enter")
+print(" flip_name('Maya') =", flip_name('Maya'))
+print(" flip_name('Code') =", flip_name('Code'))
+
+name = input("Enter a name (try 'Riya' or 'Dev'): ")
+guess = input("What is the flip_name(" + name + ")?")
+input("flip_name(s) = flip_name(s[1:]) + s[0]. Press Enter")
+print("flip_name(" + name + ")  =", flip_name(name), " your guess:", guess)
+
+
+def is_power4(n):
+    if n <= 0:
+        return False
+    if n == 1:
+        return True
+    if n % 4 == 0:
+        return is_power4(n // 4)
+    return False
+
+input(" is_power4 divides by 4 n == 1 returns True remainder returnns false. Press Enter")
+print(" is_power4(16) =", is_power4(16))
+print(" is_power4(12) =", is_power4(12))
+
+n = int(input("Enter a number (try 64 or 48): "))
+guess = input("What is is_power4(" + str(n) + ")?")
+input("is_power4 has two sops - n==1 is True remainder or n<=0 is False. Press Enter")
+print("is_power4(" + str(n) + ")  =", is_power4(n), " your guess:", guess)
+
